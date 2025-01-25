@@ -26,7 +26,7 @@ const Navbar = () => {
               </li>
               <li className="text-gray-100">
                 <a href="" className="p-1 text-gray-100">
-                  <Link to="/computers">Computers</Link>
+                  <Link to="/computers">Products</Link>
                 </a>
               </li>
               <li className="text-gray-100">
@@ -75,7 +75,7 @@ const Navbar = () => {
               </li>
               <li className="text-gray-100">
                 <a href="" className="p-1 text-gray-100">
-                  <Link to="/computers">Computers</Link>
+                  <Link to="/computers">Products</Link>
                 </a>
               </li>
               <li className="text-gray-100">

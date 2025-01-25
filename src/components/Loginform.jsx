@@ -28,7 +28,7 @@ const useWindowDimensions = () => {
   return windowDimensions;
 };
 
-const Intropage = () => {
+const Loginform = () => {
   const { width, height } = useWindowDimensions();
 
   // Determine if the viewport dimensions match the hide criteria
@@ -46,7 +46,7 @@ const Intropage = () => {
           <div className="flex space-x-14">
             <button className="px-10 py-5 bg-gray-500 text-white rounded-full">
               <a href="" className="p-1 text-gray-100">
-                <Link to="/user/register">Register</Link>
+                <Link to="'/user/register">Register</Link>
               </a>
             </button>
             <button className="px-10 py-5 bg-gray-500 text-white rounded-full">
@@ -70,4 +70,4 @@ const Intropage = () => {
   );
 };
 
-export default Intropage;
+export default Loginform;

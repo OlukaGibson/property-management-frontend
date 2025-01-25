@@ -3,7 +3,7 @@ import Break from './Break'
 
 const Footer = () => {
   return (
-    <div className="relative flex flex-col min-h-screen bg-cover bg-center bg-no-repeat">
+    <div className=" flex flex-col bg-cover bg-center bg-no-repeat">
       {/* Main content above footer */}
       <div className="flex-grow">
         <Break />
@@ -15,9 +15,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold">Explore</h3>
             <ul>
-              <li>Computers</li>
+              <li>Products</li>
               <li>Services</li>
-              <li>Accessories</li>
+              <li>Pricing</li>
             </ul>
           </div>
           <div>
@@ -31,10 +31,10 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold">Location</h3>
-            <p>Nalubega Complex, G06</p>
+            <p>Makerere University</p>
             <p>Kampala</p>
-            <p>+256 785333586</p>
-            <p>hckampala@gmail.com</p>
+            <p>+256 785 783 596</p>
+            <p>gibsonoluka7@gmail.com</p>
           </div>
         </div>
       </div>

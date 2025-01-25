@@ -12,9 +12,9 @@ import ProductImage11 from "../laptops/highbudget/highbudgetpc1.jpeg"
 import ProductImage12 from "../laptops/engineering/engineeringpc1.jpeg"
 import ProductImage13 from "../laptops/brand/acerpc1.jpeg"
 
-export const WELCOME_MESSAGE = "Welcome to your one stop location for all your technology needs";
+export const WELCOME_MESSAGE = "The definition of latest technology for property monitoring and management. Get the latest technology in market today.";
 
-export const NEW_PRODUCTS_INTRO = "New innovation, best quality than before. Make every moment flying operation become unforgettable.";
+export const NEW_PRODUCTS_INTRO = "Series of products intergratable with day to day operations for effecient property management.";
 
 export const BRANDS = ["Microsoft", "Hewlett-Packard HP", "Apple", "Lenovo", "Dell", "Asus", "Samsung", "Toshiba", "Acer"];
 export const SERIES = ["Surface Pro", "EliteBook", "MacBook Pro", "ThinkPad", "Latitude", "Swift", "Galaxy", "Satellite", "ZenBook"];

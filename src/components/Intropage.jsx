@@ -51,7 +51,7 @@ const Intropage = () => {
             </button>
             <button className="px-10 py-5 bg-gray-500 text-white rounded-full">
               <a href="" className="p-1 text-gray-100">
-                <Link to="/login">Sign in</Link>
+                <Link to="/user/login">Login in</Link>
               </a>
             </button>
           </div>

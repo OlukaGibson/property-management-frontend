@@ -1,71 +1,107 @@
-import React, { useState, useEffect } from "react";
-import { NEW_PRODUCTS_INTRO, WELCOME_MESSAGE } from "../constants";
-
-import logo from "../assets/gperfect.png";
-import { BiSearch } from "react-icons/bi";
-import { FaBars } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
-
-const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-};
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Loginform = () => {
-  const { width, height } = useWindowDimensions();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-  // Determine if the viewport dimensions match the hide criteria
-  const shouldHideSection = width <= 904 && height <= 400;
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, image: e.target.files[0] });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.username) newErrors.username = "Username is required.";
+    if (!formData.password) newErrors.password = "Password is required.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("username", formData.username);
+    formDataToSend.append("password", formData.password);
+
+    try {
+      const response = await axios.post(
+        " http://127.0.0.1:5000/user/login",
+        formDataToSend,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      alert(response.data.message);
+      navigate("/"); // Gibson don't forget to edit this
+    } catch (error) {
+      console.error(error);
+      alert("Login failed. Please try again.");
+    }
+  };
 
   return (
-    <div className="h-screen flex flex-col bg-cover">
-      <div className="flex-grow flex justify-center items-center mt-20">
-        <div className="flex flex-col text-center items-center py-10 px-6 md:px-20 w-11/12 md:w-1/2 bg-black rounded-3xl bg-opacity-75 text-white">
-          <h1 className="text-4xl md:text-4xl font-bold">Property Management System</h1>
-          <p className={`my-4 max-w-xl py-4 font-light tracking-tighter text-base md:text-lg ${shouldHideSection ? 'hidden' : 'block'}`}>
-            {WELCOME_MESSAGE}
-          </p>
-          <br />
-          <div className="flex space-x-14">
-            <button className="px-10 py-5 bg-gray-500 text-white rounded-full">
-              <a href="" className="p-1 text-gray-100">
-                <Link to="'/user/register">Register</Link>
-              </a>
-            </button>
-            <button className="px-10 py-5 bg-gray-500 text-white rounded-full">
-              <a href="" className="p-1 text-gray-100">
-                <Link to="/login">Sign in</Link>
-              </a>
-            </button>
+    // h-screen flex flex-col bg-cover
+    <div className="min-h-screen flex justify-center items-center bg-cover">
+      <div className="w-full max-w-md p-8 bg-black bg-opacity-75 text-white rounded-lg shadow-md">
+        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="username" className="block text-sm font-medium">
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              className="text-black w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            />
+            {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
           </div>
-        </div>
-      </div>
 
-      {/* <div className={`flex text-center justify-center items-center mt-10 ${shouldHideSection ? 'hidden' : 'block'}`}>
-        <div className="flex flex-col items-center py-4 px-6 w-11/12 md:w-1/2 bg-black rounded-tl-3xl rounded-tr-3xl bg-opacity-75 text-white">
-          <h1 className="text-2xl md:text-3xl font-bold">New Products</h1>
-          <p className="my-4 max-w-xl py-4 font-light tracking-tighter text-base md:text-lg">
-            {NEW_PRODUCTS_INTRO}
-          </p>
-        </div>
-      </div> */}
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="text-black w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            />
+            {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

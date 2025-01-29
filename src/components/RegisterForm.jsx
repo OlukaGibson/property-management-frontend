@@ -60,7 +60,7 @@ const RegisterForm = () => {
       );
 
       alert(response.data.message);
-      navigate("/login");
+      navigate("/user/login");
     } catch (error) {
       console.error(error);
       alert("Registration failed. Please try again.");

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Intropage from "../Intropage";
-import Footer from "../Footer";
-import BrandDisplay from "../BrandDisplay";
-import RegisterForm from "../RegisterForm";
+import Intropage from "../components/Intropage.jsx";
+import Footer from "../components/Footer.jsx";
+import BrandDisplay from "../components/BrandDisplay.jsx";
+import RegisterForm from "../components/RegisterForm.jsx";
 import Background from "./background.png";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar.jsx";
 
 const Register = () => {
     const [scrollPosition, setScrollPosition] = useState(0);

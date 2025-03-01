@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -52,7 +52,7 @@ const Loginform = () => {
 
       // Check if the response message indicates a successful login
       if (response.data.message && response.data.message.toLowerCase().includes("logged in successfully")) {
-        navigate("/computers"); // Redirect to the computers page
+        navigate("/rooms"); // Redirect to the computers page
       } else {
         alert(response.data.message || "Invalid login details. Please try again.");
       }

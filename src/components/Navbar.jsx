@@ -26,6 +26,11 @@ const Navbar = () => {
               </li>
               <li className="text-gray-100">
                 <a href="" className="p-1 text-gray-100">
+                  <Link to="/rooms">Rooms</Link>
+                </a>
+              </li>
+              <li className="text-gray-100">
+                <a href="" className="p-1 text-gray-100">
                   <Link to="/computers">My Devices</Link>
                 </a>
               </li>
@@ -54,14 +59,14 @@ const Navbar = () => {
               </li>
               {/* <li className="text-gray-100"> */}
               <a href="" className="p-1 text-gray-100">
-                <BiSearch />
+                <BiSearch/>
               </a>
               {/* </li> */}
             </ul>
           </div>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-100">
-              {isOpen ? <AiOutlineClose size={24} /> : <FaBars size={24} />}
+              {isOpen ? <AiOutlineClose size={24}/> : <FaBars size={24} />}
             </button>
           </div>
         </div>

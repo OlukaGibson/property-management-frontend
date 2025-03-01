@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Intropage from "../Intropage";
-import Footer from "../Footer";
-import BrandDisplay from "../BrandDisplay";
-import Loginform from "../Loginform";
+import Intropage from "../components/Intropage.jsx";
+import Footer from "../components/Footer.jsx";
+import BrandDisplay from "../components/BrandDisplay.jsx";
+import Loginform from "../components/Loginform.jsx";
 import Background from "./background.png";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar.jsx";
 
 const Login = () => {
     const [scrollPosition, setScrollPosition] = useState(0);

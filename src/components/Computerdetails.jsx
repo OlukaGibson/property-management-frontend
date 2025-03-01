@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-css';
 import Navbar from './Navbar';
 import Footer from "./Footer";
 import Background from "./background.png";
-import { COMPUTERDETAILS } from "../constants/index.js";
+// import { COMPUTERDETAILS } from "../constants/index.js";
 
 const tileBorderStyle = {
   border: '1px solid rgba(255, 255, 255, 0.8)',

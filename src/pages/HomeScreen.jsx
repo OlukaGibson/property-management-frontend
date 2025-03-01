@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Intropage from "../components/Intropage.jsx";
 import Footer from "../components/Footer.jsx";
-import Background from "./background.png";
+import Background from "../assets/system_background.png";
 import Navbar from "../components/Navbar.jsx";
 
 const HomeScreen = () => {

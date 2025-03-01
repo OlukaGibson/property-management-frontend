@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Background from "./background.png";
+import Background from "../assets/system_background.png";
 import RoomsDisplay from "../components/Rooms/RoomsDisplay";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";

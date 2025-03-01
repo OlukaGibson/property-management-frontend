@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -41,7 +41,7 @@ const Loginform = () => {
 
     try {
       const response = await axios.post(
-        " http://127.0.0.1:5000/user/login",
+        "https://delicate-factually-mastiff.ngrok-free.app/user/login",
         formDataToSend,
         {
           headers: {
@@ -50,10 +50,13 @@ const Loginform = () => {
         }
       );
 
-      alert(response.data.message);
-      navigate("/"); // Gibson don't forget to edit this
+      // Check if the response message indicates a successful login
+      if (response.data.message && response.data.message.toLowerCase().includes("logged in successfully")) {
+        navigate("/rooms"); // Redirect to the computers page
+      } else {
+        alert(response.data.message || "Invalid login details. Please try again.");
+      }
     } catch (error) {
-      console.error(error);
       alert("Login failed. Please try again.");
     }
   };

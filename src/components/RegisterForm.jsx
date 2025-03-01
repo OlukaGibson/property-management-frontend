@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -50,7 +50,7 @@ const RegisterForm = () => {
 
     try {
       const response = await axios.post(
-        " http://127.0.0.1:5000/user/register",
+        "https://delicate-factually-mastiff.ngrok-free.app/user/register",
         formDataToSend,
         {
           headers: {

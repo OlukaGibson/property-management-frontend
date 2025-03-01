@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Intropage from "../Intropage";
-import Footer from "../Footer";
-import BrandDisplay from "../BrandDisplay";
-import Loginform from "../Loginform";
+import { useEffect, useState } from "react";
+import Footer from "../components/Footer.jsx";
+import RegisterForm from "../components/RegisterForm.jsx";
 import Background from "./background.png";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar.jsx";
 
-const Login = () => {
+const Register = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
@@ -42,7 +40,7 @@ const Login = () => {
             <div className="fixed top-0 left-0 w-full z-50">
                 <Navbar />
             </div>
-                <Loginform />
+                <RegisterForm />
                 {/* <Intropage /> */}
                 {/* <BrandDisplay /> */}
             <Footer />
@@ -51,4 +49,4 @@ const Login = () => {
     );
 }
 
-export default Login
+export default Register

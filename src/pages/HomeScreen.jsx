@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Intropage from "../Intropage";
-import Footer from "../Footer";
-import BrandDisplay from "../BrandDisplay";
+import { useEffect, useState } from "react";
+import Intropage from "../components/Intropage.jsx";
+import Footer from "../components/Footer.jsx";
 import Background from "./background.png";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar.jsx";
 
 const HomeScreen = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

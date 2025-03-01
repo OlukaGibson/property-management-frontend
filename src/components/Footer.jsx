@@ -1,13 +1,7 @@
-import React from 'react'
-import Break from './Break'
-
 const Footer = () => {
   return (
     <div className=" flex flex-col bg-cover bg-center bg-no-repeat">
       {/* Main content above footer */}
-      <div className="flex-grow">
-        <Break />
-      </div>
 
       {/* Footer */}
       <div className="bg-black text-white">

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Intropage from "../components/Intropage.jsx";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer.jsx";
-import BrandDisplay from "../components/BrandDisplay.jsx";
 import RegisterForm from "../components/RegisterForm.jsx";
 import Background from "./background.png";
 import Navbar from "../components/Navbar.jsx";

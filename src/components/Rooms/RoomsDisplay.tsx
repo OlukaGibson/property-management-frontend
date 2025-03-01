@@ -4,8 +4,8 @@ import { ROOM_DETAILS } from "../../constants/ROOM_DETAILS";
 const RoomsDisplay = () => {
     const navigate = useNavigate();
 
-    const handleTileClick = (room) => {
-        navigate(`/rooms/${room.id}`, { state: { room } });
+    const handleTileClick = (roomId) => {
+        navigate(`/rooms/${roomId}`); // Navigate with roomId
     };
 
     return (
@@ -18,7 +18,7 @@ const RoomsDisplay = () => {
                         <div
                             key={room.id}
                             className="bg-white shadow-md rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => handleTileClick(room)}>
+                            onClick={() => handleTileClick(room.id)}>
                             <img
                                 className="w-full h-56 object-cover"
                                 src={room.image}

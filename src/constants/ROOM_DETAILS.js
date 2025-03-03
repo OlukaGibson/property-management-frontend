@@ -2,7 +2,7 @@ export const ROOM_DETAILS = [
     {
         id: 1,
         roomName: "Apartment 1",
-        image: "/images/room1.jpg",
+        image: "src/assets/room 1.jpeg",
         price: "$1500 per month",
         type: "Suite",
         occupancy: "2 Adults",
@@ -11,7 +11,7 @@ export const ROOM_DETAILS = [
     {
         id: 2,
         roomName: "Apartment 2",
-        image: "/images/room2.jpg",
+        image: "src/assets/room 2.jpeg",
         price: "$1000 per month",
         type: "Double",
         occupancy: "2 Adults",
@@ -20,7 +20,7 @@ export const ROOM_DETAILS = [
     {
         id: 3,
         roomName: "Apartment 3",
-        image: "/images/room3.jpg",
+        image: "src/assets/room 3.jpeg",
         price: "$750 per month",
         type: "Single",
         occupancy: "1 Adult",
@@ -29,7 +29,7 @@ export const ROOM_DETAILS = [
     {
         id: 4,
         roomName: "Apartment 4",
-        image: "/images/room4.jpg",
+        image: "src/assets/room 4.jpeg",
         price: "$2000 per night",
         type: "Suite",
         occupancy: "4 Guests",
@@ -38,7 +38,7 @@ export const ROOM_DETAILS = [
     {
         id: 5,
         roomName: "Apartment 5",
-        image: "/images/room5.jpg",
+        image: "src/assets/room 5.jpeg",
         price: "$5000 per night",
         type: "Penthouse",
         occupancy: "6 Guests",
@@ -47,7 +47,7 @@ export const ROOM_DETAILS = [
     {
         id: 6,
         roomName: "Apartment 6",
-        image: "/images/room6.jpg",
+        image: "src/assets/room 6.jpeg",
         price: "$3500 per night",
         type: "Villa",
         occupancy: "5 Guests",
@@ -56,7 +56,7 @@ export const ROOM_DETAILS = [
     {
         id: 7,
         roomName: "Apartment 7",
-        image: "/images/room7.jpg",
+        image: "src/assets/room 7.jpeg",
         price: "$1800 per night",
         type: "Business",
         occupancy: "1 Adult",
@@ -65,7 +65,7 @@ export const ROOM_DETAILS = [
     {
         id: 8,
         roomName: "Apartment 8",
-        image: "/images/room8.jpg",
+        image: "src/assets/room 8.jpeg",
         price: "$1200 per night",
         type: "Cabin",
         occupancy: "3 Guests",
@@ -74,7 +74,7 @@ export const ROOM_DETAILS = [
     {
         id: 9,
         roomName: "Apartment 9",
-        image: "/images/room9.jpg",
+        image: "src/assets/room 9.jpeg",
         price: "$40 per night",
         type: "Dormitory",
         occupancy: "1 Person per Bed",

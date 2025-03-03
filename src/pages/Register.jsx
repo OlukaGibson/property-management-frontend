@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer.jsx";
 import RegisterForm from "../components/RegisterForm.jsx";
-import Background from "./background.png";
+import Background from "../assets/system_background.png";
 import Navbar from "../components/Navbar.jsx";
 
 const Register = () => {

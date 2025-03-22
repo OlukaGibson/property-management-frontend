@@ -1,11 +1,29 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ROOM_DETAILS } from "../../constants/ROOM_DETAILS";
+import axios from "axios";
+import config from "../../../config";
+import { ROOM_DETAILS, ROOM_IMAGES } from "../../constants/ROOM_DETAILS";
 
 const RoomsDisplay = () => {
+    const [rooms, setRooms] = useState([]);
+    const [images] = useState([]);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const fetchRooms = async () => {
+            try {
+                const response = await axios.get(`${config.baseURL}/room/get_rooms`);
+                setRooms(response.data);
+            } catch (error) {
+                console.error("Error fetching rooms:", error);
+            }
+        };
+
+        fetchRooms();
+    }, []);
+
     const handleTileClick = (roomId) => {
-        navigate(`/rooms/${roomId}`); // Navigate with roomId
+        navigate(`/rooms/${roomId}`);
     };
 
     const handleRegisterRoom = () => {
@@ -24,20 +42,20 @@ const RoomsDisplay = () => {
             <h1 className="text-3xl font-bold text-black text-center mb-8">Available Rooms</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {ROOM_DETAILS.length > 0 ? (
-                    ROOM_DETAILS.map((room) => (
+                {rooms.length > 0 ? (
+                    rooms.map((room, index) => (
                         <div
                             key={room.id}
                             className="bg-white shadow-md rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
                             onClick={() => handleTileClick(room.id)}>
                             <img
                                 className="w-full h-56 object-cover"
-                                src={room.image}
-                                alt={room.roomName}
+                                src={ROOM_IMAGES[index]}
+                                alt={room.room_name}
                             />
                             <div className="p-4">
-                                <h2 className="text-lg font-semibold text-gray-900">{room.roomName}</h2>
-                                <p className="text-gray-600 mt-1">{room.price}</p>
+                                <h2 className="text-lg font-semibold text-gray-900">{room.room_name}</h2>
+                                <p className="text-gray-600 mt-1">{room.room_number}</p>
                             </div>
                         </div>
                     ))

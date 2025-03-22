@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import config from "../../config";
 
 const Loginform = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+
+  const baseURL = config.baseURL;
 
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -41,7 +44,8 @@ const Loginform = () => {
 
     try {
       const response = await axios.post(
-        "https://delicate-factually-mastiff.ngrok-free.app/user/login",
+        // "https://delicate-factually-mastiff.ngrok-free.app/user/login",
+        `${baseURL}/user/login`,
         formDataToSend,
         {
           headers: {

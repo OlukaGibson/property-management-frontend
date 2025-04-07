@@ -13,9 +13,11 @@ const RoomsDisplay = () => {
         const fetchRooms = async () => {
             try {
                 const response = await axios.get(`${config.baseURL}/room/get_rooms`);
-                setRooms(response.data);
+                console.log("API Response:", response.data); // Log the response to inspect its structure
+                setRooms(Array.isArray(response.data) ? response.data : []); // Ensure rooms is an array
             } catch (error) {
                 console.error("Error fetching rooms:", error);
+                setRooms([]); // Fallback to an empty array on error
             }
         };
 

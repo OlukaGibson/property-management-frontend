@@ -65,14 +65,14 @@ const RoomDetails = () => {
                             <h3 className="text-md font-semibold">Device Type: {device.device_type}</h3>
                             <div>
                                 {Object.entries(device.fields).map(([fieldKey, fieldValue]) => (
-                                    <p key={fieldKey}>{fieldValue}: {device.readings[0].fields[fieldKey]}</p>
+                                    <p key={fieldKey}>{fieldValue}: {device.readings[device.readings.length - 1].fields[fieldKey]}</p>
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="col-span-1 bg-white p-4 shadow rounded">
-                    <h2 className="text-lg font-bold">Current Status</h2>
+                    <h2 className="text-lg font-bold">Current</h2>
                     <div className="h-96 w-full"> 
                         <Line data={chartData} />
                     </div>

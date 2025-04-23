@@ -46,6 +46,15 @@ const RoomDetails = () => {
         }))
     };
 
+    // Filter users_access to only include the latest entry for each unique timestamp
+    const filteredUsersAccess = room.users_access.reduce((acc, user) => {
+        const existingUser = acc.find(u => u.time_accessed === user.time_accessed);
+        if (!existingUser) {
+            acc.push(user);
+        }
+        return acc;
+    }, []);
+
     return (
         <div className="room-info p-4 md:px-40 md:py-8 bg-gray-200"> {/* Changed background to gray-200 */}
             {/* <br />
@@ -88,7 +97,7 @@ const RoomDetails = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {room.users_access.map((user, index) => (
+                            {filteredUsersAccess.map((user, index) => (
                                 <tr key={user.userID} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
                                     <td className="py-2 px-4 border-b border-r">{user.username}</td>
                                     <td className="py-2 px-4 border-b border-r">{user.email}</td>

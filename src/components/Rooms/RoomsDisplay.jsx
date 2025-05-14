@@ -35,11 +35,11 @@ const RoomsDisplay = () => {
     return (
         <div className="min-h-screen pt-20 px-4 sm:px-8 lg:px-16 relative">
             {/* Register Room button placed at the top right corner with some space from the top */}
-            <button
+            {/* <button
                 onClick={handleRegisterRoom}
                 className="absolute top-25 right-4 bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-200">
                 Register Room
-            </button>
+            </button> */}
 
             <h1 className="text-3xl font-bold text-black text-center mb-8">Available Rooms</h1>
 
